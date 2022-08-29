@@ -18,7 +18,7 @@ const usersRoutesController = require('./controllers/usersRoutesController');
 const user = configs.dbUser;
 const password = configs.password;
 
-const address = `mongodb+srv://${user}:${password}@cluster0.6gv9onf.mongodb.net/?retryWrites=true&w=majority`;
+const address = 'mongodb+srv://${user}:${password}@cluster0.6gv9onf.mongodb.net/?retryWrites=true&w=majority';
 
 const app = express();
 
@@ -54,8 +54,9 @@ app.use(session({
   name: sessionName,
   saveUninitialized: false,
   store: MongoStore.create({
-    client: mongoose.connection.getClient()
-    //mongoURL: address,
+    //mongooseConnection: db
+    //client: mongoose.connection.getClient()
+    mongoUrl: address
     //touchAfter: 24 * 3600
   })
 }));
