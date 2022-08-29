@@ -1,0 +1,9 @@
+// file views/partials/error.ejs
+
+<% if (locals.error && locals.error[action]) { %>
+  <div class="error-message">
+    <p>
+      <%= locals.error[action].msg %>
+    </p>
+  </div>
+<% } %>

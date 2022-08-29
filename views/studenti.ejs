@@ -1,0 +1,49 @@
+// file views/studenti.ejs
+
+<!doctype html>
+<html lang="en">
+  <%- include(
+      'partials/head.ejs', 
+      {title: 'Lista studenti registrati'}
+    ); 
+  %>
+<body>
+  <%- include('partials/header.ejs'); %>
+
+  <main role="main" class="container">
+    <h1>Lista studenti registrati in biblioteca per oggi</h1>
+    <div class="students-wrapper wrapper">
+      <% studenti.forEach(function(studente){ %>
+      <div class="student">
+        <h2><%= studente.nome %> <%= studente.cognome %></h2>
+        <table class="students-data">
+          <tbody>
+            <tr>
+              <th>Matricola</th>
+              <td><%= studente.matricola %></td>
+            </tr>
+            <tr>
+              <th>Corso</th>
+              <td><%= calciatore.corso %></td>
+            </tr>
+            <tr>
+              <th>Data di nascita</th>
+              <td><%= moment(studente.dataNascita).format("DD/MM/YYYY") %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <% }); %>
+    </div>
+    <div class="action pure-g">
+      <div class="add-student pure-u-1-2">
+        <a class="pure-button button-primary" href="/nuovo-prenotazione">Aggiungi un nuovo studente</a>
+      </div>
+      <div class="download-json pure-u-1-2">
+        <a class="button-secondary pure-button" href="/studenti.json">Scarica il file in formato JSON</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

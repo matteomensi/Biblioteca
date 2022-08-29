@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "Matteo",
+    "cognome": "Mensi",
+    "matricola": "966733",
+    "corso": "SSRI",
+    "dataNascita": "2000-05-11T00:00:00.000Z"
+  },
+  {
+    "nome": "Andrea",
+    "cognome": "Bianchi",
+    "matricola": "856733",
+    "corso": "SSRI",
+    "dataNascita": "2001-06-29T00:00:00.000Z"
+  }
+]

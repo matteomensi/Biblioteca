@@ -1,0 +1,25 @@
+// file views/partials/header.ejs
+
+<div class="header">
+  <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+    <a class="pure-menu-heading" href="/">Studenti</a>
+
+    <ul class="pure-menu-list">
+      <% if (locals.user) { %>
+        <li class="pure-menu-item pure-menu-selected">
+          Ciao, <%= (locals.user) %>
+        </li>
+        <li class="pure-menu-item">
+          <a href="/utenti/logout" class="pure-menu-link">Logout</a>
+        </li>
+      <% } else { %>
+        <li class="pure-menu-item pure-menu-selected">
+          <a href="/utenti/login" class="pure-menu-link">Login</a>
+        </li>
+        <li class="pure-menu-item">
+          <a href="/utenti/registrati" class="pure-menu-link">Registrati</a>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</div>

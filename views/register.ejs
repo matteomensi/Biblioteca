@@ -1,0 +1,25 @@
+// file views/register.ejs
+
+<!doctype html>
+<html lang="en">
+  <%- include(
+      'partials/head.ejs', 
+      {title: 'Registrati per prenotare il tuo posto'}
+    ); 
+  %>
+<body>
+    <%- include('partials/header.ejs'); %>
+    <% if (!locals.user) { %>
+    <main role="main" class="container">
+    <%- include('partials/form.ejs', {h1: 'Registrati', button: 'Registrati'}); %> 
+    <%- include('partials/error.ejs', {action: 'register'})%>
+    <% } else { %>
+      <div class="content">
+        <a href="/">Torna alla Pagina Iniziale</a>
+        <p>Ciao, <%= locals.user %></p>
+      </div>
+    <% } %>
+    </main>
+
+</body>
+</html>

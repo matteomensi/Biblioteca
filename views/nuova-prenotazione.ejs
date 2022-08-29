@@ -1,0 +1,56 @@
+// file views/nuovo-prenotazione.ejs
+
+<!doctype html>
+<html lang="en">
+  <%- include(
+      'partials/head.ejs', 
+      {title: 'Aggiungi una prenotazione'}
+    ); 
+  %>
+<body>
+  <%- include('partials/header.ejs'); %>
+
+  <main role="main" class="container">
+    <h1>Aggiungi un prenotazione</h1>
+    <div class="form-wrapper wrapper">
+      <form method="post" class="pure-form pure-form-stacked">
+        <fieldset>
+          <legend>Compila i campi del form sottostante</legend>
+
+            <div class="pure-g">
+              <div class="pure-u-1-2">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" class="pure-u-23-24" type="text" required>
+              </div>
+
+              <div class="pure-u-1-2">
+                <label for="cognome">Cognome</label>
+                <input id="cognome" name="cognome" class="pure-u-23-24" type="text" required>
+              </div>
+
+              <div class="pure-u-1-2">
+                <label for="matricola">Matricola</label>
+                <input id="matricola" name="matricola" class="pure-u-23-24" type="text" required>
+              </div>
+
+              <div class="pure-u-1-2">
+                <label for="corso">Corso</label>
+                <input id="corso" name="corso" class="pure-u-23-24" type="text" required>
+              </div>
+
+              <div class="pure-u-1-2">
+                <label for="dataNascita">Data di Nascita</label>
+                <input id="dataNascita" name="dataNascita" class="pure-u-23-24" type="date" required>
+              </div>
+              
+            </div>
+            <br>
+            <button type="submit" class="pure-button pure-button-primary">Invia</button>
+        </fieldset>
+      </form>
+    </div> 
+  </main>
+
+
+</body>
+</html>

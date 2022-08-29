@@ -1,0 +1,17 @@
+// file views/partials/form.ejs
+
+<h1><%= h1 %></h1>
+<div class="form-wrapper wrapper">
+  <form method="post" class="pure-form pure-form-stacked">
+    <fieldset>
+      <legend>Compila tutti i campi sottostanti</legend>
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" placeholder="Username" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Password" required>
+      <button 
+        type="submit" 
+        class="pure-button pure-button-primary"><%= button %></button>
+    </fieldset>
+  </form>
+</div>
