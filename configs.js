@@ -1,7 +1,7 @@
 // file: configs.js
 
-const dbUser = 'matteo';
-const password = 'mensi';
+const dbUser = 'mensi';
+const password = 'matteo';
 
 const sessionSecret = 'Super Secret';
 const sessionName = 'sessionId';

@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const favicon = require('serve-favicon');
-const db = require('./databaseConfig');
+//const db = require('./databaseConfig');
 const mongoose = require('mongoose');
 const configs = require('./configs.js');
 const { sessionSecret, sessionName } = require('./configs');
@@ -18,15 +18,14 @@ const usersRoutesController = require('./controllers/usersRoutesController');
 const user = configs.dbUser;
 const password = configs.password;
 
-const address = 'mongodb+srv://${user}:${password}@cluster0.6gv9onf.mongodb.net/?retryWrites=true&w=majority';
+//const indirizzo = 'mongodb+srv://${user}:${password}@cluster0.6gv9onf.mongodb.net/?retryWrites=true&w=majority';
+const indirizzo = `mongodb+srv://${user}:${password}@cluster0.6gv9onf.mongodb.net/?retryWrites=true&w=majority`;
 
 const app = express();
 
 const PORT = 7777 || process.env.PORT;
 
 const server = http.createServer(app);
-
-mongoose.Promise = Promise;
 
 // importa i router per i diversi percorsi
 const indexRoutes = require('./routes/index')(indexRoutesController);
@@ -48,6 +47,13 @@ app.use(bodyParser.json());
 // parse cookies
 app.use(cookieParser());
 
+//databaseconfig
+/*mongoose.Promise = Promise;
+mongoose.connect(indirizzo, { useNewUrlParser: true });
+
+const db = mongoose.connection;
+db.on('error', (error) => console.log('Errore connessione' + error));*/
+
 app.use(session({
   secret: sessionSecret,
   resave: false,
@@ -56,7 +62,7 @@ app.use(session({
   store: MongoStore.create({
     //mongooseConnection: db
     //client: mongoose.connection.getClient()
-    mongoUrl: address
+    mongoUrl: indirizzo
     //touchAfter: 24 * 3600
   })
 }));

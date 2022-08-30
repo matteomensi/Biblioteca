@@ -1,4 +1,4 @@
-// file: model/students.js
+// file: model/student.js
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
@@ -14,12 +14,17 @@ const StudentSchema = new Schema({
     required: true,
     trim: true
   },
+  matricola: Number,
+  corso: {
+    type: String,
+    required: true,
+    trim: true
+  },
   dataNascita: Date,
-  matricola: Number
 });
 
 StudentSchema.index({matricola: -1});
 
-const Studente = mongoose.model('studente', StudentSchema);
+const Student = mongoose.model('studente', StudentSchema);
 
-module.exports = Studente;
+module.exports = Student;

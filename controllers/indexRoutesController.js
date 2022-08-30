@@ -22,7 +22,7 @@ function indexPage (req, res) {
 
 // Controller per la lista dei studenti (percorso /studenti)
 function studentsPage (req, res, next) {
-  Students.find({}, '-_id')
+  Student.find({}, '-_id')
     .sort({'matricola': -1})
     .exec()
     .then((studenti) => {
